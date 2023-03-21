@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php include "header.html" ?>
     <form action="send.php" method="POST">
     <div class="container d-md-flex d-sm-block" id="main-page">
    

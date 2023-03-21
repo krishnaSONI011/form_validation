@@ -1,6 +1,6 @@
 
   <div class="container">
-  <h1>Basic details</h1>
+  <h1 class="bg-primary">-Basic details-</h1>
   <div class="row">
     <div class="mb-3 col-md-12">
       <label for="exampleInputEmail1" class="form-label">Name:</label>
