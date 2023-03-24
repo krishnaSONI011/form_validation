@@ -5,7 +5,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="firstname">FirstName:</label>
-                    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" id="firstname" aria-describedby="emailHelp"
                         placeholder="Enter FirstName" required onchange=checkfirstname()>
                     <div id="fname"></div>
 
@@ -16,7 +16,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="firstname">LastName:</label>
-                    <input type="email" class="form-input" id="lastname" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" id="lastname" aria-describedby="emailHelp"
                         placeholder="Enter LastName" required onchange=checklastname()>
 
                     <div id="lname"></div>
