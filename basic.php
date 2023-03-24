@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="firstname">FirstName:</label>
+                    <label for="firstname">FirstName</label>
                     <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp"
                         placeholder="Enter FirstName" required onchange=checkfirstname()>
                     <div id="fname"></div>
