@@ -84,5 +84,19 @@
     cloneRow.appendChild(deleteBtn); // Add the delete button to the new div element
     rowsContainer.appendChild(cloneRow); // Add the new div element to the rows container
   });
+
+
+  function checkpercentage() {
+  let percentageField = document.getElementById('percentage');
+  let per_value = percentageField.value;
+  
+  if (per_value < 0 || value > 100 || isNaN(per_value)) {
+    let percentageError = document.getElementById('percentageerror');
+    percentageError.innerHTML = "<p style='color:red'>Percentage must be a number between 0 and 100</p>";
+  } else {
+    let percentageError = document.getElementById('percentageerror');
+    percentageError.innerHTML = "";
+  }
+}
 </script>
 
