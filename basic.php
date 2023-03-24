@@ -149,7 +149,7 @@ let numbers = value.toString().split('').map(Number)
 if (numbers.length > 10) {
     let numbererror = document.getElementById('number').innerHTML =
         "<p style='color:red'>Number must be  required 10 digit</p>";
-} else if (numbers.length < 10) {
+} else if (numbers.length < 10) { 
     let numbererror = document.getElementById('numbererror').innerHTML =
         "<p style='color:red'>Number must be  required 10 digit</p>";
 
