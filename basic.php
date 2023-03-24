@@ -1,31 +1,76 @@
+<h2 class="font">Personal Details:-</h2>
+<div class="container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+        <div class="form-group">
+    <label for="firstname">FirstName</label>
+    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter FirstName">
+   
+  </div>
+        </div><!--col-md-4-->
 
-  <div class="container">
-  <h1 class="bg-primary">-Basic details-</h1>
-  <div class="row">
-    <div class="mb-3 col-md-12">
-      <label for="exampleInputEmail1" class="form-label">Name:</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    
-    </div>
-    
+        <div class="col-md-4">
+        <div class="form-group">
+    <label for="firstname">LastName</label>
+    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter LastName">
+   
   </div>
-  <div class="row">
-  <div class="mb-3 col-md-12">
-  <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-    </div>
+
+
+
+        </div><!--col-md-4-->
+        <div class="col-md-4"> <!--This col for alerts -->
+        <!--This alert is for success -->
+        <?php
+        $success =false;
+        if($success){
+          echo "<div class='info'>
+          <div class='alert alert-success alert-dismissible fade show' role='alert'>
+  <div class='text-center'><strong class=>Success</strong></div> <p>we got Your data, Thanks for give us your time </p>
+  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+</div>
+          </div>";
+        }
+          ?>
+        </div><!--col-md-4-->
+
+
+      </div><!--row-->
+      <div class="row my-4">
+        <div class="col-md-4">
+        <div class="form-group">
+    <label for="firstname">Email</label>
+    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter Email">
+   
   </div>
-  <div class="row">
-  <div class="mb-3 col-md-12">
-  <label for="exampleInputEmail1" class="form-label">Mobile</label>
-      <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
+        </div><!--col-md-4-->
+
+        <div class="col-md-4">
+        <div class="form-group">
+    <label for="firstname">Phone</label>
+    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter Your Number">
+   
   </div>
-  <div class="row">
-  <div class="mb-3 col-md-12">
-  <label for="formFile" class="form-label">Please Insert your image</label>
+        </div><!--col-md-4-->
+      </div><!--row-->
+      <div class="row my-4">
+        <div class="col-md-4">
+        <div class="form-group">
+        <div class="mb-3">
+  <label for="formFile" class="form-label">Upload Image</label>
   <input class="form-control" type="file" id="formFile">
 </div>
+   
   </div>
+        </div><!--col-md-4-->
+        <div class="col-md-4">
+        <div class="form-group">
+    <label for="firstname">Designation</label>
+    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Designation">
+   
+  </div>
+        </div>
+      </div><!--row-->
+    </div>
 </div>

@@ -9,19 +9,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php include "header.html" ?>
-    <form action="send.php" method="POST">
-    <div class="container d-md-flex d-sm-block" id="main-page">
+   
+    <form action="index.php" method="POST" enctype="multipart/form-data">
+    <div class="container" id="main-page">
+    
    
 <?php include "basic.php" ?>
 
-<?php include "designation.php"?>
+<!-- <?php include "designation.php"?>-->
 
-<?php include "qualification.php"?>
-</div>
-<div class="container text-end">
+<?php include "qualification.php"?> 
+<div class="container text-end my-4">
 <button type="submit" class="btn btn-primary">Submit</button></div>
+</div>
+
 </form>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
