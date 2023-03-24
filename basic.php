@@ -5,7 +5,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="firstname">FirstName:</label>
-                    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" id="firstname" aria-describedby="emailHelp"
                         placeholder="Enter FirstName" required onchange=checkfirstname()>
                     <div id="fname"></div>
 
@@ -16,7 +16,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="firstname">LastName:</label>
-                    <input type="email" class="form-input" id="lastname" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" id="lastname" aria-describedby="emailHelp"
                         placeholder="Enter LastName" required onchange=checklastname()>
 
                     <div id="lname"></div>
@@ -149,7 +149,7 @@ let numbers = value.toString().split('').map(Number)
 if (numbers.length > 10) {
     let numbererror = document.getElementById('number').innerHTML =
         "<p style='color:red'>Number must be  required 10 digit</p>";
-} else if (numbers.length < 10) { 
+} else if (numbers.length < 10) {
     let numbererror = document.getElementById('numbererror').innerHTML =
         "<p style='color:red'>Number must be  required 10 digit</p>";
 
