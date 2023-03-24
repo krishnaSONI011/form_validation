@@ -12,7 +12,7 @@
 
         <div class="col-md-4">
         <div class="form-group">
-    <label for="firstname">LastName</label>
+    <label for="firstname">LastName:</label>
     <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter LastName">
    
   </div>
