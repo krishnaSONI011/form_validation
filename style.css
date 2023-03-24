@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-body{
+#body{
     background: rgb(34,83,195);
 background: linear-gradient(0deg, rgba(34,83,195,1) 0%, rgba(45,224,253,1) 100%);
 }
@@ -78,7 +78,9 @@ border-top-right-radius: 20px;
     margin-left: auto;
     margin-top: 30px;
 }
+.all-detail{
     
+}    
 
 @media (max-width:600px) {
     #main-page{
