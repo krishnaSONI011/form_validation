@@ -83,7 +83,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="designation">Designation</label>
-                    <input type="email" class="form-input" id="designation" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" id="designation" aria-describedby="emailHelp"
                         placeholder="Designation">
 
                 </div>
