@@ -73,8 +73,15 @@ border-top-right-radius: 20px;
 }
 .d-btn{
     border: 2px rgb(92, 92, 238) solid;
+    background-color: rgb(92, 92, 238);
+    color:white
 } 
     
+d-btn:hover{
+    border: 2px rgb(92, 92, 238) solid;
+    background-color: white;
+    color: rgb(92, 92, 238);
+}
 @media (max-width:600px) {
     #main-page{
         padding: 10px;
