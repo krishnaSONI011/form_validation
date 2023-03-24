@@ -15,7 +15,7 @@
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="firstname">LastName:</label>
+                    <label for="lastname">LastName:</label>
                     <input type="text" class="form-input" id="lastname" aria-describedby="emailHelp"
                         placeholder="Enter LastName" required onchange=checklastname()>
 
