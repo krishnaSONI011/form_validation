@@ -7,7 +7,7 @@
     <div class="col-md-4">
         <div class="form-group">
     <label for="class">Class</label>
-    <input type="text" class="form-input" id="class" aria-describedby="emailHelp" placeholder="Enter Class">
+    <input type="text" name="class[]" class="form-input" id="class" aria-describedby="emailHelp" placeholder="Enter Class">
    
   </div>
         </div><!--col-md-4-->
