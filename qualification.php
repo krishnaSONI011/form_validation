@@ -6,15 +6,15 @@
    
     <div class="col-md-4">
         <div class="form-group">
-    <label for="firstname">Class</label>
-    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter Class">
+    <label for="class">Class</label>
+    <input type="text" class="form-input" id="class" aria-describedby="emailHelp" placeholder="Enter Class">
    
   </div>
         </div><!--col-md-4-->
     <div class="col-md-4">
         <div class="form-group">
-    <label for="firstname">Board</label>
-    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter Board(like:-CBSE)">
+    <label for="board">Board</label>
+    <input type="text" class="form-input" id="board" aria-describedby="emailHelp" placeholder="Enter Board(like:-CBSE)">
    
   </div>
         </div><!--col-md-4-->
@@ -22,15 +22,15 @@
         <div class="row">
         <div class="col-md-4">
         <div class="form-group">
-    <label for="firstname">Percentage</label>
-    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter percentage %">
+    <label for="percentage">Percentage</label>
+    <input type="number" class="form-input" id="percentage" aria-describedby="emailHelp" placeholder="Enter percentage %">
    
   </div>
         </div><!--col-md-4-->
         <div class="col-md-4">
         <div class="form-group">
-    <label for="firstname">city</label>
-    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp" placeholder="Enter city(like:-jaipur)">
+    <label for="city">city</label>
+    <input type="text" class="form-input" id="city" aria-describedby="emailHelp" placeholder="Enter city(e.g:-jaipur)">
    
   </div>
         </div><!--col-md-4-->

@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="firstname">FirstName</label>
-                    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp"
+                    <label for="firstname">FirstName:</label>
+                    <input type="text" class="form-input" id="firstname" aria-describedby="emailHelp"
                         placeholder="Enter FirstName" required onchange=checkfirstname()>
                     <div id="fname"></div>
 
@@ -15,8 +15,8 @@
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="firstname">LastName:</label>
-                    <input type="email" class="form-input" id="lastname" aria-describedby="emailHelp"
+                    <label for="lastname">LastName:</label>
+                    <input type="text" class="form-input" id="lastname" aria-describedby="emailHelp"
                         placeholder="Enter LastName" required onchange=checklastname()>
 
                     <div id="lname"></div>
@@ -59,7 +59,7 @@
 
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="firstname">Phone</label>
+                    <label for="number">Phone</label>
                     <input type="number" class="form-input" id="number" aria-describedby="emailHelp"
                         placeholder="Enter Your Number" required onchange=checkvalidnumber()>
                 </div>
@@ -82,8 +82,8 @@
             <!--col-md-4-->
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="firstname">Designation</label>
-                    <input type="email" class="form-input" id="firstname" aria-describedby="emailHelp"
+                    <label for="designation">Designation</label>
+                    <input type="email" class="form-input" id="designation" aria-describedby="emailHelp"
                         placeholder="Designation">
 
                 </div>
