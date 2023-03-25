@@ -23,9 +23,10 @@
         <div class="col-md-4">
         <div class="form-group">
     <label for="percentage">Percentage</label>
-    <input type="number" class="form-input" id="percentage" aria-describedby="emailHelp" placeholder="Enter percentage %">
-   
+    <input type="number" class="form-input"  name="percentage" id="percentage" min="0" max="100" step="0.01"  placeholder="Enter percentage %" required onchange=checkpercentage()>
+    <div id="percentageerror"></div>
   </div>
+
         </div><!--col-md-4-->
         <div class="col-md-4">
         <div class="form-group">
@@ -84,5 +85,21 @@
     cloneRow.appendChild(deleteBtn); // Add the delete button to the new div element
     rowsContainer.appendChild(cloneRow); // Add the new div element to the rows container
   });
+
+
+  function checkpercentage() {
+  let percentageField = document.getElementById('percentage');
+  let per_value = percentageField.value;
+  
+  if (per_value < 0 || per_value > 100 || per_value =="" || isNaN(per_value)) {
+    let percentageError = document.getElementById('percentageerror');
+    percentageError.innerHTML = "<p style='color:red'>Percentage must be a number between 0 and 100</p>";
+    return false;
+  } else {
+    let percentageError = document.getElementById('percentageerror');
+    percentageError.innerHTML = "";
+    return true;
+  }
+}
 </script>
 
