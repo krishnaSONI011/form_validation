@@ -21,12 +21,24 @@
 
     </header>
     <div class="container" id="main-page">
+        <?php 
+        include"db_connect.php";
+        $sql ="SELECT  basicdetail.name, basicdetail.mobile, basicdetail.email, basicdetail.image,designation.designation, qualification.board12, qualification.cgpa12, qualification.board10, qualification.cgpa10 ,qualification.degree,qualification.cgpa FROM basicdetail LEFT JOIN designation ON basicdetail.id= designation.id LEFT JOIN qualification ON basicdetail.id=qualification.id";
+
+        $result = mysqli_query($conn,$sql);
+
+        $num = mysqli_num_rows($result);
+        if($num>0){
+
+            while($row =mysqli_fetch_array($result)){
+         ?>
+         
         <div class="row">
             <div class="col-md-4">
                 <strong>1</strong>
             </div>
             <div class="col-md-4">
-                <p>Name:</p>
+                <p>Name: <?php echo $row['name']; ?></p>
             </div>
             <div class="col-md-4 d-flex justify-content-around">
                 <button type="button" class="btn btn-success">Edit</button>
@@ -37,7 +49,7 @@
         <hr>
         <div class="row">
             <div class="col-md-3">
-                <img src="https://images.unsplash.com/photo-1566275529824-cca6d008f3da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGhvdG98ZW58MHx8MHx8&w=1000&q=80"
+                <img src="<?php echo $row['image'];?>"
                     class="img-fluid rounded-top" alt="">
             </div>
             <div class="col-md-9">
@@ -46,17 +58,17 @@
                         <tr>
                             <th>Email:
                             <th>
-                            <td>krishna@gmil.com</td>
+                            <td><?php echo $row['email'];?></td>
                         </tr>
                         <tr>
                             <th>Phone:
                             <th>
-                            <td>959990099</td>
+                            <td><?php echo $row['mobile'];?></td>
                         </tr>
                         <tr>
                             <th>Designation:
                             <th>
-                            <td>Fullstack Developer</td>
+                            <td><?php echo $row['designation'];?></td>
                         </tr>
 
                         <tr class="text-center">
@@ -71,7 +83,7 @@
                         </tr>
                         <tr>
                             <th>Board</th>
-                            <td>Board name</td>
+                            <td><?php echo $row['board10'];?></td>
                         </tr>
 
                         <tr>
@@ -79,7 +91,7 @@
                             Percentage
 
                             </th>
-                            <td>98</td>
+                            <td><?php echo $row['cgpa10'];?></td>
                         </tr>
 
                     </table>
@@ -87,7 +99,8 @@
 
             </div>
         </div>
-
+<?php }
+} ?>
     </div><!-- main-page-->
     </div><!-- container-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
