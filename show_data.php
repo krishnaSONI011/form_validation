@@ -24,7 +24,7 @@
         <?php 
         include"db_connect.php";
        
-        $query = "SELECT basic_info.id,basic_info.firstname,basic_info.lastname,basic_info.email,basic_info.phpne,basic_info.image,designation.post ,qualification.school_name_10,qualification.board_10,qualification.percentage_10,qualification.school_name_12,qualification.board_12,qualification.percentage_12,qualification.school_name_g,qualification.degree,qualification.percentage_g FROM basic_info LEFT JOIN designation ON basic_info.id=designation.id LEFT JOIN qualification ON basic_info.id=qualification.id";
+        $query = "SELECT basic_info.id,basic_info.firstname,basic_info.lastname,basic_info.email,basic_info.phone,basic_info.image,basic_info.designation,qualification.id,qualification.class,qualification.board,qualification.percentage,qualification.city FROM basic_info  LEFT JOIN qualification ON basic_info.id=qualification.id";
 $result = mysqli_query($conn, $query);
 $n=0;
 while($row = mysqli_fetch_assoc($result)){
@@ -63,7 +63,7 @@ while($row = mysqli_fetch_assoc($result)){
     
 }
 ?>
-      <?php  if($num>0){
+        <?php  if($num>0){
 
             while($row =mysqli_fetch_array($result)){
          ?>
