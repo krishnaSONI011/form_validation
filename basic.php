@@ -5,7 +5,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="firstname">FirstName:</label>
-                    <input type="text" class="form-input" id="firstname" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" id="firstname" name="fname" aria-describedby="emailHelp"
                         placeholder="Enter FirstName" required onchange=checkfirstname()>
                     <div id="fname"></div>
 
@@ -16,7 +16,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="lastname">LastName:</label>
-                    <input type="text" class="form-input" id="lastname" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" name="lname" id="lastname" aria-describedby="emailHelp"
                         placeholder="Enter LastName" required onchange=checklastname()>
 
                     <div id="lname"></div>
@@ -50,7 +50,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="firstname">Email</label>
-                    <input type="email" class="form-input" id="email" aria-describedby="emailHelp"
+                    <input type="email" class="form-input" name="email" id="email" aria-describedby="emailHelp"
                         placeholder="Enter Email" required onchange=checkvalidemail()>
                 </div>
                 <div id="emailerror"></div>
@@ -60,7 +60,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="number">Phone</label>
-                    <input type="number" class="form-input" id="number" aria-describedby="emailHelp"
+                    <input type="number" class="form-input" name="number" id="number" aria-describedby="emailHelp"
                         placeholder="Enter Your Number" required onchange=checkvalidnumber()>
                 </div>
                 <div id="numbererror"></div>
@@ -74,7 +74,7 @@
                 <div class="form-group">
                     <div class="mb-3">
                         <label for="formFile" class="form-label" >Upload Image</label>
-                        <input class="form-control" type="file" id="formFile" accept="image/png, image/jpeg, image/gif">
+                        <input class="form-control" type="file" name="image" id="formFile" accept="image/png, image/jpeg, image/gif">
                     </div>
 
                 </div>
@@ -83,7 +83,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="designation">Designation</label>
-                    <input type="text" class="form-input" id="designation" aria-describedby="emailHelp"
+                    <input type="text" class="form-input" name="desig" id="designation" aria-describedby="emailHelp"
                         placeholder="Designation">
 
                 </div>

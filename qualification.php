@@ -7,23 +7,24 @@
     <div class="col-md-4">
         <div class="form-group">
     <label for="class">Class</label>
-    <input type="text" name="class[]" class="form-input" id="class" aria-describedby="emailHelp" placeholder="Enter Class">
-   
-  </div>
+    <input type="text" class="form-input" name="cls[]" id="class" aria-describedby="emailHelp" placeholder="Enter Class">
+   </div>
         </div><!--col-md-4-->
+
     <div class="col-md-4">
         <div class="form-group">
     <label for="board">Board</label>
-    <input type="text" class="form-input" id="board" aria-describedby="emailHelp" placeholder="Enter Board(like:-CBSE)">
+    <input type="text" class="form-input" id="board" name="board[]"aria-describedby="emailHelp" placeholder="Enter Board(like:-CBSE)">
    
   </div>
         </div><!--col-md-4-->
-        </div><!--row-->
+
+        <!--row-->
         <div class="row">
         <div class="col-md-4">
         <div class="form-group">
     <label for="percentage">Percentage</label>
-    <input type="number" class="form-input"  name="percentage" id="percentage" min="0" max="100" step="0.01"  placeholder="Enter percentage %" required onchange=checkpercentage()>
+    <input type="number" class="form-input"  name="percentage[]" id="percentage" min="0" max="100" step="0.01"  placeholder="Enter percentage %" required onchange=checkpercentage()>
     <div id="percentageerror"></div>
   </div>
 
@@ -31,7 +32,7 @@
         <div class="col-md-4">
         <div class="form-group">
     <label for="city">city</label>
-    <input type="text" class="form-input" id="city" aria-describedby="emailHelp" placeholder="Enter city(e.g:-jaipur)">
+    <input type="text" class="form-input" id="city" name="city[]" aria-describedby="emailHelp" placeholder="Enter city(e.g:-jaipur)">
    
   </div>
         </div><!--col-md-4-->

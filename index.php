@@ -10,7 +10,7 @@
 </head>
 <body id="body">
    
-    <form action="index.php" method="POST" enctype="multipart/form-data">
+    <form action="insert.php" method="POST" enctype="multipart/form-data">
     <div class="container" id="main-page">
     
    
@@ -20,7 +20,7 @@
 
 <?php include "qualification.php"?> 
 <div class="container text-end my-4">
-<button type="submit" class="btn btn-primary">Submit</button></div>
+<button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
 </div>
 
 </form>
