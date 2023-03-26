@@ -1,8 +1,8 @@
 <?php 
-$conn =mysqli_connect('localhost','root','','Employe');
+$conn =mysqli_connect('localhost','root','','employe');
 
 if(!$conn){
-    die("error".mysqli_connect_error);
+    die("error".mysqli_connect_error());
 }
 
 ?>

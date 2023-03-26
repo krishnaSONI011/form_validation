@@ -1,19 +1,25 @@
 <?php 
-require 'db_connect.php';
+// require 'db_connect.php';
+$conn =mysqli_connect('localhost','root','','employe');
+
+if(!$conn){
+    die("error".mysqli_connect_error());
+}
+
 
  if(isset($_POST['submit'])){
+
    $FName=$_POST['fname'];
    $Lname=$_POST['lname'];
    $Email=$_POST['email'];
    $phone=$_POST['number'];
-   $designation=$_POST['desig'];
-   $IMAGE=$_FILES["image"];
+  //  $IMAGE=$_FILES['image'];
     //print_r($_FILES['image']);
     $img_loc=$_FILES['image']['tmp_name'];
     $img_name=$_FILES['image']['name'];
     $img_des="uploads/".$img_name;
     move_uploaded_file($img_loc,'uploads/'.$img_name);
-    
+    $designation=$_POST['desig']; 
 
     $Class=$_POST['cls'];
     $Board=$_POST['board'];
@@ -22,7 +28,9 @@ require 'db_connect.php';
    
    print_r($_POST);
     
-   $Sql="INSERT INTO `basic_info`( `firstname`, `lasstname`, `email`, `phone`, `Image`, `designation`) VALUES ('$FName','$Lname','$Email','$phone',$img_des,'$designation')";
+   $Sql="INSERT INTO `basic_info`( `firstname`, `lasstname`, `email`, `phone`, `Image`, `designation`) VALUES ('$FName','$Lname','$Email','$phone','$img_des','$designation')";
+
+   $result=mysqli_query($conn,$Sql);
     if($result){
       echo "success";
     }
@@ -44,6 +52,7 @@ require 'db_connect.php';
     if($result){
       $row =mysqli_fetch_assoc($result);
       $id = $row['id'];
+      echo $id;
     }else{
       $id=0;
     }
@@ -51,8 +60,9 @@ require 'db_connect.php';
 
     // $sqle="INSERT INTO `qualification`(`id`, `class`, `board`, `percentage`, `city`, `phone`) VALUES ('$id','$c_class','$c_board','$percentage','$c_percentage','$c_city')";
     $sqle ="INSERT INTO `qualification`(`id`, `class`, `board`, `percentage`, `city`) VALUES ('$id','$c_class','$c_board','$c_percentage','$c_city')";
-      $res=mysqli_query($conn,$sqle);
-  }
+
+    $res=mysqli_query($conn, $sqle);
+  
    if($res){
     echo "success";
    }else{
@@ -61,6 +71,7 @@ require 'db_connect.php';
 
    
    }
-
+   echo "hellow";
+  }
 
 ?>

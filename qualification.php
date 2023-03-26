@@ -7,17 +7,18 @@
     <div class="col-md-4">
         <div class="form-group">
     <label for="class">Class</label>
-    <input type="text" name="cls[]" class="form-input" id="class" aria-describedby="emailHelp" placeholder="Enter Class">
-   
-  </div>
+    <input type="text" class="form-input" name="cls[]" id="class" aria-describedby="emailHelp" placeholder="Enter Class">
+   </div>
         </div><!--col-md-4-->
+
     <div class="col-md-4">
         <div class="form-group">
     <label for="board">Board</label>
-    <input type="text" class="form-input" name="board[]" id="board" aria-describedby="emailHelp" placeholder="Enter Board(like:-CBSE)">
+    <input type="text" class="form-input" id="board" name="board[]"aria-describedby="emailHelp" placeholder="Enter Board(like:-CBSE)">
    
   </div>
         </div><!--col-md-4-->
+        
         </div><!--row-->
         <div class="row">
         <div class="col-md-4">
