@@ -18,8 +18,8 @@
    
   </div>
         </div><!--col-md-4-->
-
-        <!--row-->
+        
+        </div><!--row-->
         <div class="row">
         <div class="col-md-4">
         <div class="form-group">
