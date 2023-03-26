@@ -23,16 +23,51 @@
     <div class="container" id="main-page">
         <?php 
         include"db_connect.php";
-        $sql ="SELECT  basicdetail.name, basicdetail.mobile, basicdetail.email, basicdetail.image,designation.designation, qualification.board12, qualification.cgpa12, qualification.board10, qualification.cgpa10 ,qualification.degree,qualification.cgpa FROM basicdetail LEFT JOIN designation ON basicdetail.id= designation.id LEFT JOIN qualification ON basicdetail.id=qualification.id";
+       
+        $query = "SELECT basic_info.id,basic_info.firstname,basic_info.lastname,basic_info.email,basic_info.phpne,basic_info.image,designation.post ,qualification.school_name_10,qualification.board_10,qualification.percentage_10,qualification.school_name_12,qualification.board_12,qualification.percentage_12,qualification.school_name_g,qualification.degree,qualification.percentage_g FROM basic_info LEFT JOIN designation ON basic_info.id=designation.id LEFT JOIN qualification ON basic_info.id=qualification.id";
+$result = mysqli_query($conn, $query);
+$n=0;
+while($row = mysqli_fetch_assoc($result)){
+      
+    $n=$n+1;
 
-        $result = mysqli_query($conn,$sql);
+    echo "
 
-        $num = mysqli_num_rows($result);
-        if($num>0){
+        <tr> 
+            <th scope='row'> $n</th>
+            <td><img src='$row[image]' alt='' style='width:100px; height:100px'></td>
+            <td>$row[name]</td>
+            <td> $row[email] </td>
+            <td> $row[mobile_no] </td>
+            <td> $row[post]</td>
+            <td> $row[school_name_10] </td>
+            <td> $row[board_10] </td>
+            <td> $row[percentage_10]</td>
+            <td> $row[school_name_12] </td>
+            <td> $row[board_12]</td>
+            <td> $row[percentage_12]</td>
+            <td> $row[school_name_g] </td>
+            <td> $row[degree]</td>
+            <td> $row[percentage_g]</td>
+            <td> <a href='Edit.php?  id=$row[id]' class='btn btn-success'>Edid</a></td>
+           <td> <a href='delete.php? id=$row[id]' class='btn btn-danger'>Delete</a>
+            </td>
+
+        </tr>
+        
+        </tr>";
+        
+        ?>
+
+        <?php
+    
+}
+?>
+      <?php  if($num>0){
 
             while($row =mysqli_fetch_array($result)){
          ?>
-         
+
         <div class="row">
             <div class="col-md-4">
                 <strong>1</strong>
@@ -49,8 +84,7 @@
         <hr>
         <div class="row">
             <div class="col-md-3">
-                <img src="<?php echo $row['image'];?>"
-                    class="img-fluid rounded-top" alt="">
+                <img src="<?php echo $row['image'];?>" class="img-fluid rounded-top" alt="">
             </div>
             <div class="col-md-9">
                 <div class="table-responsive">
@@ -59,6 +93,7 @@
                             <th>Email:
                             <th>
                             <td><?php echo $row['email'];?></td>
+                            </th>
                         </tr>
                         <tr>
                             <th>Phone:
@@ -88,7 +123,7 @@
 
                         <tr>
                             <th>
-                            Percentage
+                                Percentage
 
                             </th>
                             <td><?php echo $row['cgpa10'];?></td>
@@ -99,7 +134,7 @@
 
             </div>
         </div>
-<?php }
+        <?php }
 } ?>
     </div><!-- main-page-->
     </div><!-- container-->
