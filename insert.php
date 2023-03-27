@@ -1,6 +1,6 @@
 <?php 
-// require 'db_connect.php';
-$conn =mysqli_connect('localhost','root','','employe');
+require 'db_connect.php';
+//$conn =mysqli_connect('localhost','root','','employe');
 
 if(!$conn){
     die("error".mysqli_connect_error());
