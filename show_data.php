@@ -60,7 +60,7 @@
                 <p>Name: <?php echo $row['firstname']; ?></p>
             </div>
             <div class="col-md-4 d-flex justify-content-around">
-                <button type="button" class="btn btn-success">Edit</button>
+            <a href="update.php?id=<?php echo $row['id']; ?>" class='btn btn-success'>Edid</a>
                 <button type="button" class="btn btn-danger ">Delete</button>
             </div>
         </div>

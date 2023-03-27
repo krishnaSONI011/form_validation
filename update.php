@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <form action="">
     <div class="container" id="main-page">
 <h2 class="font">Personal Details:-</h2>
