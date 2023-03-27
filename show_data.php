@@ -57,10 +57,10 @@
                 <strong></strong>
             </div>
             <div class="col-md-4">
-                <p>Name: <?php echo $row['firstname']; ?></p>
+                <p>Name: <?php echo $row['firstname'] .' '. $row['lasstname']?></p>
             </div>
             <div class="col-md-4 d-flex justify-content-around">
-                <button type="button" class="btn btn-success">Edit</button>
+                <button  type="button" class="btn btn-success"><a href="edit.php">Edit</a></button>
                 <button type="button" class="btn btn-danger ">Delete</button>
             </div>
         </div>
