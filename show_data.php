@@ -22,64 +22,49 @@
     </header>
     <div class="container" id="main-page">
         <?php 
-        include"db_connect.php";
-       
-        $query = "SELECT basic_info.id,basic_info.firstname,basic_info.lastname,basic_info.email,basic_info.phone,basic_info.image,basic_info.designation,qualification.id,qualification.class,qualification.board,qualification.percentage,qualification.city FROM basic_info  LEFT JOIN qualification ON basic_info.id=qualification.id";
-$result = mysqli_query($conn, $query);
-$n=0;
-while($row = mysqli_fetch_assoc($result)){
-      
-    $n=$n+1;
-
-    echo "
-
-        <tr> 
-            <th scope='row'> $n</th>
-            <td><img src='$row[image]' alt='' style='width:100px; height:100px'></td>
-            <td>$row[name]</td>
-            <td> $row[email] </td>
-            <td> $row[mobile_no] </td>
-            <td> $row[post]</td>
-            <td> $row[school_name_10] </td>
-            <td> $row[board_10] </td>
-            <td> $row[percentage_10]</td>
-            <td> $row[school_name_12] </td>
-            <td> $row[board_12]</td>
-            <td> $row[percentage_12]</td>
-            <td> $row[school_name_g] </td>
-            <td> $row[degree]</td>
-            <td> $row[percentage_g]</td>
-            <td> <a href='Edit.php?  id=$row[id]' class='btn btn-success'>Edid</a></td>
-           <td> <a href='delete.php? id=$row[id]' class='btn btn-danger'>Delete</a>
-            </td>
-
-        </tr>
+        include 'db_connect.php';
         
-        </tr>";
-        
-        ?>
+        $sql= "SELECT basic_info.id, basic_info.firstname, basic_info.lasstname, basic_info.email, basic_info.phone, basic_info.image, basic_info.designation, qualification.id, qualification.class, qualification.board, qualification.percentage, qualification.city FROM basic_info LEFT JOIN qualification ON basic_info.id=qualification.id GROUP BY qualification.id";
 
-        <?php
-    
-}
-?>
-        <?php  if($num>0){
+                
+        // $query = "SELECT basic_info.id,basic_info.firstname,basic_info.lasstname,basic_info.email,basic_info.phone,basic_info.image,basic_info.designation,qualification.id,qualification.class,qualification.board,qualification.percentage,qualification.city FROM basic_info  LEFT JOIN qualification ON basic_info.id=qualification.id GROUP BY qid";
+
+
+        // $sql= "SELECT basic_info.id, basic_info.firstname, basic_info.lasstname, basic_info.email, basic_info.phone, basic_info.image, basic_info.designation, qualification.id as qid, qualification.class, qualification.board, qualification.percentage, qualification.city FROM basic_info LEFT JOIN qualification ON basic_info.id=qualification.id GROUP BY qid";
+
+
+
+        $result = mysqli_query($conn, $sql);
+
+        $num = mysqli_num_rows($result);
+        
+        
+        if($num>0){
+             $num;
 
             while($row =mysqli_fetch_array($result)){
+                $Id=$row['id'];
+                echo $Id;
+         ?>
+
+
+        <?php 
+       
          ?>
 
         <div class="row">
             <div class="col-md-4">
-                <strong>1</strong>
+                <strong></strong>
             </div>
             <div class="col-md-4">
-                <p>Name: <?php echo $row['name']; ?></p>
+                <p>Name: <?php echo $row['firstname']; ?></p>
             </div>
             <div class="col-md-4 d-flex justify-content-around">
                 <button type="button" class="btn btn-success">Edit</button>
                 <button type="button" class="btn btn-danger ">Delete</button>
             </div>
         </div>
+
         <!--row-->
         <hr>
         <div class="row">
@@ -93,12 +78,11 @@ while($row = mysqli_fetch_assoc($result)){
                             <th>Email:
                             <th>
                             <td><?php echo $row['email'];?></td>
-                            </th>
                         </tr>
                         <tr>
                             <th>Phone:
                             <th>
-                            <td><?php echo $row['mobile'];?></td>
+                            <td><?php echo $row['phone'];?></td>
                         </tr>
                         <tr>
                             <th>Designation:
@@ -109,25 +93,34 @@ while($row = mysqli_fetch_assoc($result)){
                         <tr class="text-center">
                             <th>Qualification</th>
                         </tr>
+                        <?php
+        // select qualifications for this person
+        $qual_query = "SELECT * FROM qualification WHERE id = '$Id'";
+        $qual_result = mysqli_query($conn, $qual_query);
+        $qual_num = mysqli_num_rows($qual_result);
+        if ($qual_num > 0) {
+            while ($qual_row = mysqli_fetch_array($qual_result)) {
+?>
                         <tr>
-                            <th>
-                                class:
-                            </th>
-                            <td> 10</td>
-
+                            <th>Class:</th>
+                            <td><?php echo $qual_row['class'];?></td>
                         </tr>
                         <tr>
-                            <th>Board</th>
-                            <td><?php echo $row['board10'];?></td>
+                            <th>Board:</th>
+                            <td><?php echo $qual_row['board'];?></td>
                         </tr>
-
                         <tr>
-                            <th>
-                                Percentage
-
-                            </th>
-                            <td><?php echo $row['cgpa10'];?></td>
+                            <th>Percentage:</th>
+                            <td><?php echo $qual_row['percentage'];?></td>
                         </tr>
+                        <tr>
+                            <th>City:</th>
+                            <td><?php echo $qual_row['city'];?></td>
+                        </tr>
+                        <?php
+            }
+        }
+?>
 
                     </table>
                 </div>
