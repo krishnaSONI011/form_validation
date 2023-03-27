@@ -45,7 +45,7 @@ if(!$conn){
       $c_board = $Board[$index];
       $c_percentage = $Percentage[$index];
       $c_city = $City[$index];
-    
+      
 
     $query = "SELECT id FROM basic_info ORDER BY id DESC LIMIT 1";
     $result = mysqli_query($conn, $query);
@@ -53,7 +53,7 @@ if(!$conn){
       $row =mysqli_fetch_assoc($result);
       $id = $row['id'];
       echo $id;
-    }else{
+    }else{                                                                                                              
       $id=0;
     }
 
