@@ -1,10 +1,10 @@
 <?php 
-// require 'db_connect.php';
-$conn =mysqli_connect('localhost','root','','employe');
+require 'db_connect.php';
+//$conn =mysqli_connect('localhost','root','','employe');
 
-if(!$conn){
-    die("error".mysqli_connect_error());
-}
+// if(!$conn){
+//     die("error".mysqli_connect_error());
+// }
 
 
  if(isset($_POST['submit'])){
@@ -31,10 +31,7 @@ if(!$conn){
    $Sql="INSERT INTO `basic_info`( `firstname`, `lasstname`, `email`, `phone`, `Image`, `designation`) VALUES ('$FName','$Lname','$Email','$phone','$img_des','$designation')";
 
    $result=mysqli_query($conn,$Sql);
-    if($result){
-      echo "success";
-    }
-    else{
+    if(!$result){
       echo "data does not inserted successfully";
     }
 
@@ -64,14 +61,14 @@ if(!$conn){
     $res=mysqli_query($conn, $sqle);
   
    if($res){
-    echo "success";
+    header("location:show_data.php");
    }else{
-    echo "data does not insert ";
+    header("location:index.php");
    }
 
    
    }
-   echo "hellow";
+   
   }
 
 ?>

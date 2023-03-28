@@ -37,14 +37,15 @@
         $result = mysqli_query($conn, $sql);
 
         $num = mysqli_num_rows($result);
-        
+        $nums=0;
         
         if($num>0){
              $num;
 
             while($row =mysqli_fetch_array($result)){
                 $Id=$row['id'];
-                echo $Id;
+                $nums=$nums+1;
+                echo $nums;
          ?>
 
 
@@ -57,11 +58,13 @@
                 <strong></strong>
             </div>
             <div class="col-md-4">
-                <p>Name: <?php echo $row['firstname'] .' '. $row['lasstname']?></p>
+                <p>Name: <?php echo $row['firstname'].' '. $row['lasstname']; ?></p>
             </div>
             <div class="col-md-4 d-flex justify-content-around">
-                <button  type="button" class="btn btn-success"><a href="edit.php">Edit</a></button>
-                <button type="button" class="btn btn-danger ">Delete</button>
+            <a href="update.php?id=<?php echo $row['id']; ?>" class= "btn btn-success">Edit</a>
+           <button id="delete" class="btn btn-danger" onclick="mydelete(<?php echo $row['id'] ?>)" >Delete</button>
+           <input type="hidden" id="id" value="<?php echo $row['id'] ?>">   
+                <!-- <button type="button" class="btn btn-danger ">Delete</button> -->
             </div>
         </div>
 
@@ -133,7 +136,26 @@
     </div><!-- container-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
+         
+
+        
     </script>
+    <script>
+        
+         
+        let del =document.getElementById('delete');
+       
+
+        function mydelete(id){
+          
+            console.log(id)
+           let choose= confirm("Are you sure you want to delete your data ?")
+                if(choose){
+                    window.location.href = "delete.php?id=" +id;
+                }
+             
+        }
+        </script>
 </body>
 
 </html>
