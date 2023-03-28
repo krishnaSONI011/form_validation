@@ -74,7 +74,7 @@
             <div class="col-md-3">
                 <img src="<?php echo $row['image'];?>" class="img-fluid rounded-top" alt="">
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9" style="    overflow-y: scroll;height: 240px;">
                 <div class="table-responsive">
                     <table class="table table-primary">
                         <tr>
