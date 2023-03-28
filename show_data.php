@@ -149,7 +149,7 @@
         function mydelete(id){
           
             console.log(id)
-           let choose= confirm("allset")
+           let choose= confirm("Are you sure you want to delete your data ?")
                 if(choose){
                     window.location.href = "delete.php?id=" +id;
                 }
